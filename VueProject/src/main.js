@@ -1,11 +1,13 @@
-import './assets/main.css'
+import "./assets/main.css"
 
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from "vue"
+import App from "./App.vue"
+import router from "./router"
+import authService from "./services/authService"
 
 const app = createApp(App)
 
-app.use(router)
+authService.setupAxiosInterceptors()
 
-app.mount('#app')
+app.use(router)
+app.mount("#app")
